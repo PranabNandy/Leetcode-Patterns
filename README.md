@@ -118,7 +118,7 @@ Chrome Version 71.0.3578.98
 	- [Closure Number](#closure-number)
 - [23-Merge k Sorted Lists](#23-merge-k-sorted-lists)
 	- [Brute Force](#brute-force-5)
-- [146-LRU Cache](#146-lru-cache)
+- [24-LRU Cache](#146-lru-cache)
 
 
 
