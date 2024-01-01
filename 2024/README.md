@@ -65,3 +65,6 @@ public:
 };
 ```
 ### https://www.linkedin.com/in/prantikmukherjee/
+- **Using Cyclic sort variants**:
+- ![Screenshot from 2024-01-01 22-57-36](https://github.com/PranabNandy/Leetcode-Patterns/assets/34576104/46bd886b-b24c-4dcb-9f44-069ae220f576)
+
