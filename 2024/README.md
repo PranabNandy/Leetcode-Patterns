@@ -17,6 +17,9 @@ public:
     }
 };
 ```
+`**arr.to_string()  && arr.to_ulong()**` 
+
+
 - **Using sum of N numbers**:
 ```
 class Solution {
