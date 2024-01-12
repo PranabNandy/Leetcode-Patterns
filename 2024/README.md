@@ -109,7 +109,7 @@ public:
     }
 };
 ```
-2. https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/description/
+**2. https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/description/**
 
 **Alternative of bitset is boolean array**
 ```
