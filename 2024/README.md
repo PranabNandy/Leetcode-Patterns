@@ -109,4 +109,50 @@ public:
     }
 };
 ```
+2. https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/description/
 
+**Alternative of bitset is boolean array**
+```
+vector<bool> seen(size(nums)+1);
+```
+**Cyclic Sort Variations**
+
+![Screenshot from 2024-01-12 21-09-46](https://github.com/PranabNandy/Leetcode-Patterns/assets/34576104/846e6285-3b5a-4c53-ae69-005e60b0080c)
+```
+class Solution {
+public:
+    vector<int> findDisappearedNumbers(vector<int>& nums) {
+        vector<int> ans;
+        int n=nums.size();
+        for(int i=0;i<n;++i){
+            while(nums[i]!=nums[nums[i]-1]){
+                   swap(nums[i],nums[nums[i]-1]);
+            }
+        }
+        for(int i=0;i<n;i++){
+            if(nums[i]!=i+1) ans.push_back(i+1);
+        }
+      return ans;
+        
+    }
+};
+```
+**Make Negative of Array Elements**
+```
+class Solution {
+public:
+    vector<int> findDisappearedNumbers(vector<int>& nums) {
+        vector<int> ans;
+        int n=nums.size();
+        for(int i=0;i<n;i++){
+            int ele=abs(nums[i]);
+            nums[ele-1]=-abs(nums[ele-1]);
+        }
+        for(int i=0;i<n;i++){
+            if(nums[i]>0) ans.push_back(i+1);
+        }
+      return ans;
+        
+    }
+};
+```
