@@ -156,3 +156,24 @@ public:
     }
 };
 ```
+
+**3. https://leetcode.com/problems/single-number/**
+
+**Substract from set elements**
+```
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        int sum_1=0,sum_2=0;
+        unordered_set<int> um;
+        for(int &i: nums){
+            um.insert(i);
+            sum_1+=i;
+        } 
+        for(auto it: um){
+            sum_2+=2*(it);
+        }
+        return sum_2-sum_1;
+    }
+};
+```
