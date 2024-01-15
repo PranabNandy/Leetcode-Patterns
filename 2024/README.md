@@ -161,8 +161,6 @@ public:
 
 **Substract from set elements**
 ```
-class Solution {
-public:
     int singleNumber(vector<int>& nums) {
         int sum_1=0,sum_2=0;
         unordered_set<int> um;
@@ -175,5 +173,23 @@ public:
         }
         return sum_2-sum_1;
     }
-};
+```
+**4.https://leetcode.com/problems/move-zeroes/**
+
+**`Alternative`** `of two pointer `: Basically it is an old step of two pointer
+
+
+``` 
+   void moveZeroes(vector<int>& nums) {
+        ios_base::sync_with_stdio(false);
+        cin.tie(0);
+        cout.tie(0);
+        int cnt=0;
+        int j=0;
+        int n=nums.size();
+        for(int i=0;i<n;i++){
+            if(nums[i]) nums[j++]=nums[i];
+        }
+        for(int i=j;i<n;i++) nums[i]=0;
+    }
 ```
