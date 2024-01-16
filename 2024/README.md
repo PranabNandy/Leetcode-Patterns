@@ -1,4 +1,9 @@
-
+- Bhai Tume dekkar me motivate ho jata tha
+- Bhai tum caho toh kuch kar sakte ho
+- Bhai tere pas toh System Engineering domain ka pura data hai
+- Kon kaha swicth kiya hai ...kaise wo top position pe hai
+- bhai hum logo ka batch me tumse tez kohi nehi tha be
+  
 **1. https://leetcode.com/problems/missing-number/description/**
 - Special Case:
 - **Using bitset:**
