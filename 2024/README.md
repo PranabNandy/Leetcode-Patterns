@@ -193,3 +193,22 @@ public:
         for(int i=j;i<n;i++) nums[i]=0;
     }
 ```
+**5.https://leetcode.com/problems/product-of-array-except-self/**
+- Space = O(1)
+- Time = O(n)
+```
+class Solution {
+public:
+    vector<int> productExceptSelf(vector<int>& nums) {
+          int n=nums.size();
+          vector<int> L(n);
+          L[0]=1;
+          for(int i=1;i<n;i++) L[i]=L[i-1]*nums[i-1];
+          int R=1;
+          for(int i=n-1;i>=0;i--){
+              L[i]=L[i]*R;
+              R=R*nums[i];
+          }
+          return L;
+    }
+};
