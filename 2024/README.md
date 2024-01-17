@@ -217,3 +217,26 @@ public:
           return L;
     }
 };
+```
+**6.https://leetcode.com/problems/find-the-duplicate-number/**
+
+## Index Sort
+
+```
+class Solution {
+public:
+    int findDuplicate(vector<int>& nums) {
+        int n=nums.size();
+        for(int i=0;i<n;i++){
+            int index=nums[i];
+            if(index==i+1) continue;
+            else if(nums[i]==nums[nums[i]-1]) return nums[i];
+            else{
+                swap(nums[i],nums[nums[i]-1]);
+                i--;
+            }
+        }
+        return 0;
+    }
+};
+```
