@@ -300,3 +300,32 @@ public:
     }
 };
 ```
+## special bit manipulation with array element and array index
+- The inner loop calculates the count of set bits at the bit position for both the `array elements (x)` and the `array positions (y)`.
+- If `x (count of set bits in the array)` is greater than `y (count of set bits in the array positions)`, it means there is a duplicate number with a set bit at the current position.
+```
+class Solution {
+public:
+    int findDuplicate(vector<int>& nums) {
+        int n = nums.size();
+        int bits=31;
+        while((n-1)>>bits==0)
+        {
+            bits--;
+        } 
+        int x=0,y=0,ans=0;
+        for(int bit=0;bit<=bits;bit++){
+            x=0,y=0;
+            for(int i=0;i<n;i++){
+                if((nums[i]&(1<<bit))!=0) x++;
+                if(i!=0){ // as there m+1 elements counting from 1 to m
+                    if((i & (1<<bit))!=0) y++;
+                }
+            }
+            if(x>y)
+                ans |=(1<<bit);
+        }
+        return ans;
+    }
+};
+```
