@@ -255,3 +255,25 @@ public:
     }
 };
 ```
+**Slow Pointer and fast pointer concept**
+![Screenshot from 2024-01-19 18-02-26](https://github.com/PranabNandy/Leetcode-Patterns/assets/34576104/4fa9c675-8202-4324-a4fa-ffa371c4f9ab)
+
+```
+class Solution {
+public:
+    int findDuplicate(vector<int>& nums) {
+        int n=nums.size();
+        int fast=nums[0],slow=nums[0];
+        do{
+           slow=nums[slow];
+           fast=nums[nums[fast]];
+        }while(fast!=slow); 
+        fast=nums[0];
+        while(slow!=fast){
+            slow=nums[slow];
+            fast=nums[fast];
+        } 
+        return slow;
+    }
+};
+```
