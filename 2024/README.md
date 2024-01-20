@@ -331,7 +331,7 @@ public:
 ```
 **7.https://leetcode.com/problems/find-all-duplicates-in-an-array/**
 
-**Making the array elements -ve**
+**Making the array elements -ve     || Pigeon Hole Principle**
 ```
 class Solution {
 public:
