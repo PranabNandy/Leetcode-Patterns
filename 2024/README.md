@@ -350,3 +350,82 @@ public:
     }
 };
 ```
+
+**8.https://leetcode.com/problems/set-matrix-zeroes/**
+
+**Used Sets** : T=O(N*M) S=(N+M)
+```
+class Solution {
+public:
+    void setZeroes(vector<vector<int>>& matrix) {
+        unordered_set<int> R,C;
+        int n=matrix.size();
+        int m=matrix[0].size();
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                if(matrix[i][j]==0){
+                    R.insert(i);
+                    C.insert(j);
+                }
+            }
+        }
+        for(auto it=R.begin();it!=R.end();it++){
+            int r=*it;
+            for(int j=0;j<m;j++)
+                matrix[r][j]=0;
+        }
+        for(auto it=C.begin();it!=C.end();it++){
+            int c=*it;
+            for(int i=0;i<n;i++)
+                matrix[i][c]=0;
+        }
+        
+    }
+};
+```
+**Constant Space**
+![Screenshot from 2024-01-23 03-49-00](https://github.com/PranabNandy/Leetcode-Patterns/assets/34576104/992d13fd-0f3f-4e55-8653-c8aa40235f1e)
+```
+class Solution {
+public:
+    void setZeroes(vector<vector<int>>& matrix) {
+        
+        int n=matrix.size();
+        int m=matrix[0].size();
+        bool R=false,C=false;
+        for(int i=0;i<n;i++){
+            if(matrix[i][0]==0)
+                C=true;
+        }
+        for(int j=0;j<m;j++){
+            if(matrix[0][j]==0)
+                R=true;
+        }
+        for(int i=1;i<n;i++){
+            for(int j=1;j<m;j++){
+                if(matrix[i][j]==0){
+                    matrix[0][j]=0;
+                    matrix[i][0]=0;
+                }
+            }
+        }
+        for(int i=1;i<n;i++){
+            if(matrix[i][0]==0){
+                for(int j=0;j<m;j++) matrix[i][j]=0;
+            }
+        }
+        for(int j=1;j<m;j++){
+            if(matrix[0][j]==0){
+                for(int i=0;i<n;i++) matrix[i][j]=0;
+            }
+        }
+        if(R){
+            for(int j=0;j<m;j++) matrix[0][j]=0;
+        }
+        if(C){
+            for(int i=0;i<n;i++) matrix[i][0]=0;
+        }
+        
+    }
+};
+```
