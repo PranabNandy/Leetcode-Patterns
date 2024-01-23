@@ -448,3 +448,66 @@ public:
     }
 };
 ```
+**10.https://leetcode.com/problems/longest-consecutive-sequence/**
+
+Brute Force approach, T=O(N^3) S=O(1)
+```
+class Solution {
+private:
+    bool check(vector<int> &nums, int target){
+        int n=nums.size();
+        for(int i=0;i<n;i++){
+            if(nums[i]==target) return true;
+        }
+        return false;
+    }
+public:
+    int longestConsecutive(vector<int>& nums) {
+        int longestSeq=1;
+        int n=nums.size();
+        for(int i=0;i<n;i++){
+            int val=nums[i];
+            int longest=1;
+            while(check(nums,val+1)){
+                longest++;
+                val++;
+            }
+            longestSeq=max(longestSeq,longest);
+        }
+        return longestSeq;
+        
+    }
+};
+```
+## There is a huge differenence between Hash.count(x) and Hash[x]
+- If we don't erase the element of Hash Table ( `Hash.erase(x)` ) the `Hash.count(x)` will be 1
+- `Hash[x]=count` then we can make it  `Hash[x]=0` but it does not impact the `Hash.count(x)`
+- Unorder_set (Hash Table) Approach T=O(N) S=O(N)
+
+```
+class Solution {
+public:
+    int longestConsecutive(vector<int>& nums) {
+        int longestSeq=0;
+        int n=nums.size();
+        unordered_map<int,bool> Hash;
+        for(int i=0;i<n;i++) 
+            Hash[nums[i]]=true;
+        for(int i=0;i<n;i++){
+            // it means nums[i] is not the starting point of a consecutive subsequence
+            if(Hash.count(nums[i]-1)>0) 
+                Hash[nums[i]]=false;
+        }
+        for(int i=0;i<n;i++){
+            int j=1;
+            if(Hash[nums[i]]){
+                while(Hash.count(nums[i]+j)>0)
+                    j++;
+            }
+            longestSeq=max(longestSeq,j);
+        }
+        return longestSeq;
+        
+    }
+};
+```
