@@ -511,3 +511,31 @@ public:
     }
 };
 ```
+## set does not have count function
+- We can avoid the use of count in Hash Table if we follow this set technique
+- T=O(N)   S=O(N)
+
+```
+class Solution {
+public:
+    int longestConsecutive(vector<int>& nums) {
+        int longestSeq=0;
+        int n=nums.size();
+        unordered_set<int> set;
+        for(int i=0;i<n;i++) 
+            set.insert(nums[i]);
+        
+        for(int i=0;i<n;i++){   
+            int j=1;
+            if(set.find(nums[i]-1)==set.end()){
+                while(set.find(nums[i]+j)!=set.end())
+                    j++;
+            }
+            longestSeq=max(longestSeq,j);
+        }
+        return longestSeq;
+        
+    }
+};
+
+```
