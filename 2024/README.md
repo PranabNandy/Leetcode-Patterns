@@ -483,7 +483,10 @@ public:
 - If we don't erase the element of Hash Table ( `Hash.erase(x)` ) the `Hash.count(x)` will be 1
 - `Hash[x]=count` then we can make it  `Hash[x]=0` but it does not impact the `Hash.count(x)`
 - Unorder_set (Hash Table) Approach T=O(N) S=O(N)
-
+- 
+Hash Table count concept | Also Hash[nums[i]_+j] != 0 | 
+--- | --- |
+I used this concept in New Problem | 23/1/2024 | 
 ```
 class Solution {
 public:
