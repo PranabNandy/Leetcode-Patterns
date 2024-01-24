@@ -551,7 +551,7 @@ private:
     vector<int> parent, Rank;
     int find(int a){
         if(parent[a]==a) return parent[a];
-        else return parent[a] = find(parent[a]);
+        else return find(parent[a]);
     }
     void Union(int a,int b){
         int par_a=find(a);
