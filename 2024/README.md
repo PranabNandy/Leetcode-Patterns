@@ -591,3 +591,33 @@ public:
     }
 };
 ```
+** We can use DP + Interval concept using Hash[val]={left,right}**
+```
+class Solution {
+public:
+    int longestConsecutive(vector<int>& nums) {
+        unordered_map<int,bool> vis;
+        unordered_map<int,pair<int,int>> Hash;
+        int ans=0;
+        int n=nums.size();
+        for(int i=0;i<n;i++){
+            int val=nums[i];
+            if(vis[val]) continue;
+            vis[val]=true;
+            int l=val,r=val;
+            if(Hash.count(val+1)){
+                r=Hash[val+1].second;
+            }
+            if(Hash.count(val-1)){
+                l=Hash[val-1].first;
+            }
+            // It will not work, we need to use while loop
+            // Hash[val]={l,r};  
+            Hash[l]={l,r};
+            Hash[r]={l,r};
+            ans=max(ans,r-l+1);
+        }
+        return ans;
+    }
+};
+```
