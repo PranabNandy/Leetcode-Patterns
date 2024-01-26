@@ -1,5 +1,6 @@
 **1.https://leetcode.com/problems/number-of-islands/description/**
-![Screenshot from 2024-01-26 18-18-39](https://github.com/PranabNandy/Leetcode-Patterns/assets/34576104/26f63e51-6c3f-44ff-b64f-8b4c43f943dd)
+
+![Screenshot from 2024-01-26 18-39-26](https://github.com/PranabNandy/Leetcode-Patterns/assets/34576104/f97ca37d-8ddf-4b38-8b9d-450300aa41c3)
 
 ```
 class Solution {
