@@ -591,7 +591,7 @@ public:
     }
 };
 ```
-** We can use DP + Interval concept using Hash[val]={left,right}**
+**We can use DP + Interval concept using Hash[val]={left,right}**
 ```
 class Solution {
 public:
