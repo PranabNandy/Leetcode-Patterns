@@ -621,3 +621,7 @@ public:
     }
 };
 ```
+**11.https://leetcode.com/problems/first-missing-positive/description/**
+### Cyclic Sort / Index Sort
+![Screenshot from 2024-01-26 16-34-15](https://github.com/PranabNandy/Leetcode-Patterns/assets/34576104/a1ba9bdd-1794-4d79-b261-e6ede7f6eebc)
+
