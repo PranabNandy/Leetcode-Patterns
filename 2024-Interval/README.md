@@ -1,6 +1,6 @@
 **1.https://leetcode.com/problems/merge-intervals/description/**
 
-```
+```cpp
 class Solution {
 public:
 
@@ -25,3 +25,5 @@ bool Solution::comp(vector<int> &v1, vector<int> &v2){
     else return false;
 }
 ```
+**2.https://leetcode.com/problems/interval-list-intersections/description/**
+![Screenshot from 2024-01-27 15-27-55](https://github.com/PranabNandy/Leetcode-Patterns/assets/34576104/75cbbcc8-7f27-4a0e-8db0-ffc281ab44f1)
