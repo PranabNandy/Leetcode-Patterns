@@ -2,7 +2,7 @@
 
 ![Screenshot from 2024-01-26 18-39-26](https://github.com/PranabNandy/Leetcode-Patterns/assets/34576104/f97ca37d-8ddf-4b38-8b9d-450300aa41c3)
 
-```
+```cpp
 class Solution {
 private:
     vector<int> parent;
