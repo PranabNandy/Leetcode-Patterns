@@ -1,5 +1,8 @@
-# Leetcode-Patterns
 
+
+![Screenshot from 2024-01-27 17-54-30](https://github.com/PranabNandy/Leetcode-Patterns/assets/34576104/1d3f2f45-535d-47a5-a331-c0765cb3ece5)
+
+# Leetcode-Patterns
  Maximum Continuous Subarray
 - Sliding Window: O(n)
 
