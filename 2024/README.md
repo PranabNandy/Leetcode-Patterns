@@ -7,7 +7,7 @@
 **1. https://leetcode.com/problems/missing-number/description/**
 - Special Case:
 - **Using bitset:**
-```
+```cpp
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {
@@ -22,11 +22,11 @@ public:
     }
 };
 ```
-`**arr.to_string()  && arr.to_ulong()**` 
+**`arr.to_string()  && arr.to_ulong()`** 
 
 
 - **Using sum of N numbers**:
-```
+```cpp
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {
@@ -40,7 +40,7 @@ public:
 };
 ```
 - **Using x-or logic**:
-```
+```cpp
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {
@@ -55,7 +55,7 @@ public:
 };
 ```
 - **Using set**:
-```
+```cpp
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {
@@ -75,7 +75,7 @@ public:
 ### https://www.linkedin.com/in/prantikmukherjee/
 - **Using Cyclic sort variants**:
 - ![Screenshot from 2024-01-01 22-57-36](https://github.com/PranabNandy/Leetcode-Patterns/assets/34576104/46bd886b-b24c-4dcb-9f44-069ae220f576)
-```
+```cpp
 - Take the example of 1 element array
 - Then 2 elements ( Check all possibilities like 3 cases)
 - Then 3 elements (Check all possibilities like 6 case)
@@ -117,13 +117,13 @@ public:
 **2. https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/description/**
 
 **Alternative of bitset is boolean array**
-```
+```cpp
 vector<bool> seen(size(nums)+1);
 ```
 **Cyclic Sort Variations**
 
 ![Screenshot from 2024-01-12 21-09-46](https://github.com/PranabNandy/Leetcode-Patterns/assets/34576104/846e6285-3b5a-4c53-ae69-005e60b0080c)
-```
+```cpp
 class Solution {
 public:
     vector<int> findDisappearedNumbers(vector<int>& nums) {
@@ -143,7 +143,7 @@ public:
 };
 ```
 **Make Negative of Array Elements**
-```
+```cpp
 class Solution {
 public:
     vector<int> findDisappearedNumbers(vector<int>& nums) {
@@ -165,7 +165,7 @@ public:
 **3. https://leetcode.com/problems/single-number/**
 
 **Substract from set elements**
-```
+```cpp
     int singleNumber(vector<int>& nums) {
         int sum_1=0,sum_2=0;
         unordered_set<int> um;
@@ -184,7 +184,7 @@ public:
 **`Alternative`** `of two pointer `: Basically it is an old step of two pointer
 
 
-``` 
+``` cpp
    void moveZeroes(vector<int>& nums) {
         ios_base::sync_with_stdio(false);
         cin.tie(0);
@@ -201,7 +201,7 @@ public:
 **5.https://leetcode.com/problems/product-of-array-except-self/**
 - Space = O(1)
 - Time = O(n)
-```
+```cpp
 class Solution {
 public:
     vector<int> productExceptSelf(vector<int>& nums) {
@@ -222,7 +222,7 @@ public:
 
 ## Index Sort
 
-```
+```cpp
 class Solution {
 public:
     int findDuplicate(vector<int>& nums) {
@@ -241,7 +241,7 @@ public:
 };
 ```
 ### Marking array elements to -ve
-```
+```cpp
 class Solution {
 public:
     int findDuplicate(vector<int>& nums) {
@@ -258,7 +258,7 @@ public:
 **Slow Pointer and fast pointer concept**
 ![Screenshot from 2024-01-19 18-02-26](https://github.com/PranabNandy/Leetcode-Patterns/assets/34576104/4fa9c675-8202-4324-a4fa-ffa371c4f9ab)
 
-```
+```cpp
 class Solution {
 public:
     int findDuplicate(vector<int>& nums) {
@@ -278,7 +278,7 @@ public:
 };
 ```
 ## Binary Search Variations
-```
+```cpp
 class Solution {
 public:
     int findDuplicate(vector<int>& nums) {
@@ -303,7 +303,7 @@ public:
 ## special bit manipulation with array element and array index
 - The inner loop calculates the count of set bits at the bit position for both the `array elements (x)` and the `array positions (y)`.
 - If `x (count of set bits in the array)` is greater than `y (count of set bits in the array positions)`, it means there is a duplicate number with a set bit at the current position.
-```
+```cpp
 class Solution {
 public:
     int findDuplicate(vector<int>& nums) {
@@ -332,7 +332,7 @@ public:
 **7.https://leetcode.com/problems/find-all-duplicates-in-an-array/**
 
 **Making the array elements -ve     || Pigeon Hole Principle**
-```
+```cpp
 class Solution {
 public:
     vector<int> findDuplicates(vector<int>& nums) {
@@ -354,7 +354,7 @@ public:
 **8.https://leetcode.com/problems/set-matrix-zeroes/**
 
 **Used Sets** : T=O(N*M) S=(N+M)
-```
+```cpp
 class Solution {
 public:
     void setZeroes(vector<vector<int>>& matrix) {
@@ -385,7 +385,7 @@ public:
 ```
 **Constant Space**
 ![Screenshot from 2024-01-23 03-49-00](https://github.com/PranabNandy/Leetcode-Patterns/assets/34576104/992d13fd-0f3f-4e55-8653-c8aa40235f1e)
-```
+```cpp
 class Solution {
 public:
     void setZeroes(vector<vector<int>>& matrix) {
@@ -430,7 +430,7 @@ public:
 };
 ```
 **9.https://leetcode.com/problems/rotate-image/**
-```
+```cpp
 class Solution {
 public:
     
@@ -451,7 +451,7 @@ public:
 **10.https://leetcode.com/problems/longest-consecutive-sequence/**
 
 Brute Force approach, T=O(N^3) S=O(1)
-```
+```cpp
 class Solution {
 private:
     bool check(vector<int> &nums, int target){
@@ -487,7 +487,7 @@ public:
 Hash Table count concept | Also Hash[nums[i]_+j] != 0 | 
 --- | --- |
 I used this concept in New Problem | 23/1/2024 | 
-```
+```cpp
 class Solution {
 public:
     int longestConsecutive(vector<int>& nums) {
@@ -518,7 +518,7 @@ public:
 - We can avoid the use of count in Hash Table if we follow this set technique
 - T=O(N)   S=O(N)
 
-```
+```cpp
 class Solution {
 public:
     int longestConsecutive(vector<int>& nums) {
@@ -545,7 +545,7 @@ public:
 ## using Disjoint set Union
 ![Screenshot from 2024-01-24 11-37-11](https://github.com/PranabNandy/Leetcode-Patterns/assets/34576104/459284fb-da2c-4c27-84ca-612642c45414)
 
-```
+```cpp
 class Solution {
 private:
     vector<int> parent, Rank;
@@ -592,7 +592,7 @@ public:
 };
 ```
 **We can use DP + Interval concept using Hash[val]={left,right}**
-```
+```cpp
 class Solution {
 public:
     int longestConsecutive(vector<int>& nums) {
