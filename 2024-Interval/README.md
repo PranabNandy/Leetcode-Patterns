@@ -179,7 +179,7 @@ public:
     }
 };
 ```
-**Another variants of Tabulation Method( with binary search)**
+**Another variants of Tabulation Method( with binary search) + sorted based on start**
 ```cpp
 class Solution{
 private:
@@ -187,17 +187,17 @@ private:
         int n=arr.size();
         int l=index+1, r=n;
         while(l<r){
-            int m=(l+r)/2;
-            if(arr[m][0]<arr[index][1])
-                l=m+1;
+            int mid=(l+r)/2;
+            if(arr[index][1]>arr[mid][0])
+                l=mid+1;
             else
-                r=m;
+                r=mid;
         }
         return r;
     }
 public:
     int eraseOverlapIntervals(vector<vector<int>>& arr){
-        n=arr.size();
+        int n=arr.size();
         sort(arr.begin(),arr.end());
         // tabulation
         vector<int> dp(n+1,0);
