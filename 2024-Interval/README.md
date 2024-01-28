@@ -179,3 +179,37 @@ public:
     }
 };
 ```
+**Another variants of Tabulation Method( with binary search)**
+```cpp
+class Solution{
+private:
+    int n;
+    vector<pair<int,int>> inter;
+    int searchNextMin(vector<vector<int>> &arr,int index){
+        int n=arr.size();
+        int l=index, r=n;
+        while(l+1<r){
+            int m=(l+r)/2;
+            if(arr[m][0]<arr[index][1])
+                l=m;
+            else
+                r=m;
+        }
+        return r;
+    }
+public:
+    int eraseOverlapIntervals(vector<vector<int>>& arr){
+        n=arr.size();
+        sort(arr.begin(),arr.end());
+        // tabulation
+        vector<int> dp(n+1,0);
+        dp[n-1]=1;
+        for(int i=n-2;i>=0;i--){
+            int j=searchNextMin(arr,i);
+            dp[i]=max(1+dp[j],dp[i+1]);
+        }
+        return n-dp[0];
+    }
+};
+
+```
