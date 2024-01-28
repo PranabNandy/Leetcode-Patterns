@@ -53,7 +53,7 @@ public:
 };
 ```
 **3.https://leetcode.com/problems/non-overlapping-intervals/**
-- Based on sorting of any of the end points
+- Based on sorting of **any of the points**(`start point or end point`)
 ```cpp
 class Solution {
 private:
