@@ -158,3 +158,24 @@ public:
     }
 };
 ```
+**Another variants of Tabulation Method**
+```cpp
+class Solution {
+public:
+    int eraseOverlapIntervals(vector<vector<int>>& intervals) {
+        sort(intervals.begin(), intervals.end());
+        int size_ = intervals.size();
+        vector<int> dp(size_,1);
+
+        //    T=O(n2)
+        for(int i=1;i<size_;i++){
+            for(int j=0; j<i; j++){
+                if(intervals[j][1]<=intervals[i][0])
+                    dp[i] = max(dp[i], dp[j]+1);
+            }
+        }
+        
+        return size_-dp[size_-1];
+    }
+};
+```
