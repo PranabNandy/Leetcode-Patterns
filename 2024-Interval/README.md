@@ -183,15 +183,13 @@ public:
 ```cpp
 class Solution{
 private:
-    int n;
-    vector<pair<int,int>> inter;
     int searchNextMin(vector<vector<int>> &arr,int index){
         int n=arr.size();
-        int l=index, r=n;
-        while(l+1<r){
+        int l=index+1, r=n;
+        while(l<r){
             int m=(l+r)/2;
             if(arr[m][0]<arr[index][1])
-                l=m;
+                l=m+1;
             else
                 r=m;
         }
