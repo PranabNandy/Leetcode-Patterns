@@ -28,3 +28,65 @@ bool Solution::comp(vector<int> &v1, vector<int> &v2){
 ```
 **2.https://leetcode.com/problems/interval-list-intersections/description/**
 ![Screenshot from 2024-01-27 15-27-55](https://github.com/PranabNandy/Leetcode-Patterns/assets/34576104/75cbbcc8-7f27-4a0e-8db0-ffc281ab44f1)
+```cpp
+class Solution {
+public:
+    vector<vector<int>> intervalIntersection(vector<vector<int>>& first, vector<vector<int>>& second) {
+        int n=first.size();
+        int m=second.size();
+        int i=0,j=0;
+        vector<vector<int>> merge;
+        while(i<n && j<m){
+            int s1=first[i][0], e1=first[i][1];
+            int s2=second[j][0], e2=second[j][1];
+            if(s1<=e2 && s2<=e1){
+                int x=max(s1,s2);
+                int y=min(e1,e2);
+                merge.push_back({x,y});
+            }      
+            if(e1<e2) i++;
+            else j++;
+        }
+        return merge;
+    }
+
+};
+```
+**3.https://leetcode.com/problems/non-overlapping-intervals/**
+- Based on sorting of any of the end points
+```cpp
+class Solution {
+private:
+public:
+    int eraseOverlapIntervals(vector<vector<int>>& arr) {
+        // Considering end point during sorting
+      /*sort(arr.begin(),arr.end(),[](vector<int> &a,vector<int> &b){
+            if(a[1]<b[1]) return true;
+            else if(a[1]>b[1]) return false;
+            else return a[0]<b[0];
+        });*/
+        // Considering start point during sorting
+        sort(arr.begin(),arr.end(),[](vector<int> &a,vector<int> &b){
+            if(a[0]<b[0]) return true;
+            else if(a[0]>b[0]) return false;
+            else return a[1]<b[1];
+        });
+        
+        int cnt=0;
+        int global_end=arr[0][1];
+        int n=arr.size();
+        for(int i=1;i<n;i++){
+            int start=arr[i][0];
+            int end=arr[i][1];
+            if(global_end<=start){
+                global_end=end;
+            }
+            else{
+                global_end=min(end,global_end);
+                cnt++;
+            }
+        }
+        return cnt;
+    }
+};
+```
