@@ -53,6 +53,7 @@ public:
 };
 ```
 **3.https://leetcode.com/problems/non-overlapping-intervals/**
+### Greedy Approach
 - Based on sorting of **any of the points**(`start point or end point`)
 ```cpp
 class Solution {
@@ -87,6 +88,41 @@ public:
             }
         }
         return cnt;
+    }
+};
+```
+### Top Down Approach => DP ( Recursion + Memorization)
+
+```cpp
+class Solution {
+private:
+    vector<int> dp;
+    int solve(vector<vector<int>> &arr,int global_end, int index){
+        if(index>=arr.size())
+            return 0;
+        
+        int pick=0,not_pick;
+        if(dp[index]!=-1) return dp[index];
+        if(global_end<=arr[index][0]){
+            pick=1+solve(arr,arr[index][1],index+1);
+        }
+        not_pick=solve(arr,global_end,index+1);
+        return dp[index]=max(pick,not_pick);
+    }
+public:
+    int eraseOverlapIntervals(vector<vector<int>>& arr) {
+        // Considering end point during sorting
+        sort(arr.begin(),arr.end(),[](vector<int> &a,vector<int> &b){
+            if(a[1]<b[1]) return true;
+            else if(a[1]>b[1]) return false;
+            else return a[0]<b[0];
+        });
+        int n=arr.size();
+        dp.clear();
+        dp.resize(n,-1);
+        int global_end=INT_MIN, index=0;
+        int cnt=solve(arr,global_end,index);
+        return n-cnt;
     }
 };
 ```
