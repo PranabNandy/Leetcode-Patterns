@@ -1,3 +1,4 @@
+![Screenshot from 2024-01-28 12-18-00](https://github.com/PranabNandy/Leetcode-Patterns/assets/34576104/1e20e934-cef7-4fb9-a3c5-5b04e00d394a)
 **1.https://leetcode.com/problems/merge-intervals/description/**
 
 ```cpp
