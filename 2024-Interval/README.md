@@ -126,3 +126,35 @@ public:
     }
 };
 ```
+### Botom-Up Approach ==> Tabulation
+**Sorting based on start point did not work out for DP**
+```cpp
+class Solution {
+private:
+    vector<int> dp;
+public:
+    int eraseOverlapIntervals(vector<vector<int>>& arr) {
+        // Considering end point during sorting
+        sort(arr.begin(),arr.end(),[](vector<int> &a,vector<int> &b){
+            if(a[1]<b[1]) return true;
+            else if(a[1]>b[1]) return false;
+            else return a[0]<b[0];
+        });
+        int n=arr.size();
+        dp.clear();
+        dp.resize(n,-1);
+        dp[0]=1;
+        int global_end=arr[0][1];
+        for(int i=1;i<n;i++){
+            int picked=INT_MIN;
+            int not_picked=dp[i-1];
+            if(global_end<=arr[i][0]){
+                global_end=arr[i][1];
+                picked=1+dp[i-1];
+            }
+            dp[i]=max(picked,not_picked);
+        }
+        return n-dp[n-1];
+    }
+};
+```
