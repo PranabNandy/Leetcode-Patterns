@@ -180,6 +180,8 @@ public:
 };
 ```
 **Another variants of Tabulation Method( with binary search) + sorted based on start**
+![Screenshot from 2024-01-29 22-20-26](https://github.com/PranabNandy/Leetcode-Patterns/assets/34576104/823cef7c-c8d8-4e70-b327-c28df19271b3)
+
 ```cpp
 class Solution{
 private:
