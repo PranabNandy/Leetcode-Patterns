@@ -1,4 +1,6 @@
 
+![Screenshot from 2024-02-11 19-15-38](https://github.com/PranabNandy/Leetcode-Patterns/assets/34576104/e70f35b0-322f-4cb1-90bb-3e8409aba9d2)
+
 ![Screenshot from 2024-01-27 18-01-59](https://github.com/PranabNandy/Leetcode-Patterns/assets/34576104/6f32b318-bc54-4c20-8668-51538dcc31a2)
 
 
