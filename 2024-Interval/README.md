@@ -213,3 +213,38 @@ public:
 };
 
 ```
+**4.https://leetcode.com/problems/insert-interval/description/**
+
+Straight Forward, Heuristic Approach
+![Screenshot from 2024-02-11 18-52-00](https://github.com/PranabNandy/Leetcode-Patterns/assets/34576104/05273f0e-fd27-4738-ba72-702bb3567dd4)
+```cpp
+
+class Solution {
+public:
+    vector<vector<int>> insert(vector<vector<int>>& arr, vector<int>& brr) {
+            int n=arr.size();
+            vector<vector<int>> ans;
+            if(n==0){
+                return {brr};
+            }
+            int i=0;
+            while(i<n && arr[i][1]<brr[0]){
+                ans.push_back(arr[i++]);
+            }
+            int x=brr[0],y=brr[1];
+            while(i<n && arr[i][0]<=brr[1]){
+                x=min(arr[i][0],x);
+                y=max(arr[i][1],y);
+                i++;
+            }
+            
+            ans.push_back({x,y});
+            while(i<n){
+                ans.push_back(arr[i++]);
+            }
+            return ans;
+
+    }
+};
+
+```
