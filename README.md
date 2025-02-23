@@ -8,6 +8,9 @@ priority_queue<pair<int,int>,
  set<pair<int, int>> st;
         st.insert({0, 1});
 
+// Declare 2D matrix
+vector<vector<int>> arr(n, vector<int>(m, 1e9));
+
  ```
 
 ![Screenshot from 2024-02-11 19-15-38](https://github.com/PranabNandy/Leetcode-Patterns/assets/34576104/e70f35b0-322f-4cb1-90bb-3e8409aba9d2)
