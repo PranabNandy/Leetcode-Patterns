@@ -2,7 +2,9 @@
 ```c++
 priority_queue<pair<int,int>,
         vector<pair<int,int>>,greater<pair<int,int>>> min_heap;
-
+/*
+ * Basically set is also a BST
+ */
  set<pair<int, int>> st;
         st.insert({0, 1});
 
