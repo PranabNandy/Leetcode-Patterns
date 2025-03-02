@@ -24,6 +24,17 @@ for(int ind=2;ind<n;ind++){
  }
 Example: nums = [2,1,1,2]
 Your Output : 3   ----> Expected Output: 4
+
+Modification :=>  Do not mess up with Recursion Base Condition.
+// Here Even though recursion solution was working fine
+dp[0]=nums[0];
+// dp[1]=nums[1];  :=> This things mess up the fundamention of Tabulation technique
+for(int ind=1;ind<n;ind++){
+         int take=nums[ind];
+	if(ind-2>=0) 	take+=dp[ind-2];
+         int notTake=dp[ind-1];
+         dp[ind]=max(take,notTake);
+ }
  ```
 
 ![Screenshot from 2024-02-11 19-15-38](https://github.com/PranabNandy/Leetcode-Patterns/assets/34576104/e70f35b0-322f-4cb1-90bb-3e8409aba9d2)
