@@ -36,6 +36,24 @@ for(int ind=1;ind<n;ind++){
          dp[ind]=max(take,notTake);
  }
  ```
+2. https://leetcode.com/problems/house-robber-ii/
+ ```c++
+    int rob2(vector<int>& nums, int st, int end) {   // { 0,n-2   ===  1,n-1 }
+       int n=nums.size();
+       if((end-st)==0) return nums[st]; // check this condition
+       int prev=nums[st], prev2, curr; // check this line "st"
+       for(int ind=st+1;ind<=end;ind++){ // check the index
+            int take=nums[ind];
+	        if(ind-2>=st)
+		        take+=prev2;
+            int notTake= prev;
+            curr=max(take,notTake);
+            prev2=prev;
+            prev=curr;
+        }
+       return curr;
+    }
+ ```
 
 ![Screenshot from 2024-02-11 19-15-38](https://github.com/PranabNandy/Leetcode-Patterns/assets/34576104/e70f35b0-322f-4cb1-90bb-3e8409aba9d2)
 
