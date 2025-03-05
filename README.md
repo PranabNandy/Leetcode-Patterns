@@ -55,6 +55,10 @@ for(int ind=1;ind<n;ind++){
     }
  ```
 3. https://leetcode.com/problems/unique-paths/
+## Important Lession:
+- Recursion will always be Top Down ( except one/two problem) and Tabulation will Bottom Up
+- Else the logic is difficult to implement in tabulation
+- Example problem: https://leetcode.com/problems/unique-paths-ii/description/
  ```c++
 int solve(int i,int j, int desi,int desj,vector<vector<int>> &dp){
         if(i==desi && j==desj) return 1;
