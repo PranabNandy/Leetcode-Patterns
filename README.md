@@ -54,7 +54,31 @@ for(int ind=1;ind<n;ind++){
        return curr;
     }
  ```
-
+3. https://leetcode.com/problems/unique-paths/
+ ```c++
+int solve(int i,int j, int desi,int desj,vector<vector<int>> &dp){
+        if(i==desi && j==desj) return 1;
+        if(dp[i][j]!=-1) return dp[i][j];
+        int down=0, right=0;
+        if(i+1<=desi ) down=solve(i+1,j,desi,desj,dp); 
+        if(j+1<=desj ) right=solve(i,j+1,desi,desj,dp);
+        return dp[i][j]=down+right;
+        
+    }
+// How Recursion is getting converted into Tabulation form
+    int uniquePaths(int m, int n) {
+        vector<vector<int>> dp(m, vector<int>(n,0));
+/* Base condition has changed a lot */
+        for(int i=0;i<m;i++) dp[i][n-1]=1; 
+        for(int j=0;j<n;j++) dp[m-1][j]=1;
+        for(int i=m-2;i>=0;i--){
+            for(int j=n-2;j>=0;j--){
+                dp[i][j]=dp[i+1][j]+dp[i][j+1];
+            }
+        }
+        return dp[0][0];
+    }
+ ```
 ![Screenshot from 2024-02-11 19-15-38](https://github.com/PranabNandy/Leetcode-Patterns/assets/34576104/e70f35b0-322f-4cb1-90bb-3e8409aba9d2)
 
 ![Screenshot from 2024-01-27 18-01-59](https://github.com/PranabNandy/Leetcode-Patterns/assets/34576104/6f32b318-bc54-4c20-8668-51538dcc31a2)
