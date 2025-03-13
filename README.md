@@ -5,6 +5,17 @@
 - https://www.youtube.com/shorts/Lk2yaM0HheU
 
 ```c++
+struct Compare {
+    bool operator()(pair<int, int> a, pair<int, int> b) {
+        return a.second < b.second; // Max heap on second element
+    }
+};
+
+int main() {
+    // Priority queue with custom comparator
+    priority_queue<pair<int, int>, vector<pair<int, int>>, Compare> maxHeap;
+}
+
 priority_queue<pair<int,int>,
         vector<pair<int,int>>,greater<pair<int,int>>> min_heap;
 
