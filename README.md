@@ -7,6 +7,10 @@
 ```c++
 priority_queue<pair<int,int>,
         vector<pair<int,int>>,greater<pair<int,int>>> min_heap;
+
+ // Max heap based on the first element of pair
+ priority_queue<pair<int, int>> maxHeap;
+
 /*
  * Basically set is also a BST
  */
