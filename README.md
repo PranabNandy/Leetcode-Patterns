@@ -5,6 +5,10 @@
 - https://www.youtube.com/shorts/Lk2yaM0HheU
 
 ```c++
+
+set<int, greater<int>> s;  // Descending order set
+======================================================
+
 struct Compare {
     bool operator()(pair<int, int> a, pair<int, int> b) {
         return a.second < b.second; // Max heap on second element
@@ -15,13 +19,13 @@ int main() {
     // Priority queue with custom comparator
     priority_queue<pair<int, int>, vector<pair<int, int>>, Compare> maxHeap;
 }
-
+======================================================
 priority_queue<pair<int,int>,
         vector<pair<int,int>>,greater<pair<int,int>>> min_heap;
 
  // Max heap based on the first element of pair
  priority_queue<pair<int, int>> maxHeap;
-
+======================================================
 /*
  * Basically set is also a BST
  */
