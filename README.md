@@ -6,7 +6,8 @@
 - 
 ![image](https://github.com/user-attachments/assets/7422ff3b-1051-4ef6-ab56-3779973ed808)
 
-
+### In BFS:
+- We can insert {Node+parent} so that we can move in one direction only (like left to right )
 ```c++
 
 set<int, greater<int>> s;  // Descending order set
