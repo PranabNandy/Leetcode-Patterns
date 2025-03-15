@@ -4,12 +4,20 @@
 **Success**: End-start not the end point
 - https://www.youtube.com/shorts/Lk2yaM0HheU
 - 
+
+### In Trie
 ![image](https://github.com/user-attachments/assets/7422ff3b-1051-4ef6-ab56-3779973ed808)
 
 ### In BFS:
 - We can insert {Node+parent} so that we can move in one direction only (like left to right )
-```c++
 
+
+### In DFS : Directed Graph to detect cycle
+![image](https://github.com/user-attachments/assets/83884c66-af94-4ce9-a528-876a86733878)
+
+
+
+```c++
 set<int, greater<int>> s;  // Descending order set
 ======================================================
 
