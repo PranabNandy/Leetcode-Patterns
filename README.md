@@ -15,6 +15,8 @@
 ### In DFS : Directed Graph to detect cycle
 ![image](https://github.com/user-attachments/assets/83884c66-af94-4ce9-a528-876a86733878)
 
+### DFS : Detect safe node
+![image](https://github.com/user-attachments/assets/2018e815-0a51-44dd-bc57-2b39f0f2cbc6)
 
 
 ```c++
