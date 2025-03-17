@@ -25,7 +25,7 @@ set<int, greater<int>> s;  // Descending order set
 
 struct Compare {
     bool operator()(pair<int, int> a, pair<int, int> b) {
-        return a.second < b.second; // Max heap on second element
+        return a.first < b.first; // Max heap on second element
     }
 };
 
