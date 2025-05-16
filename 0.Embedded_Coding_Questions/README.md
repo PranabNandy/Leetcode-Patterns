@@ -77,3 +77,16 @@ bool cb_pop(CircularBuffer *cb, uint8_t *byte) {
     return true;
 }
 ```
+
+### 1. What happens if the producer is faster than the consumer?
+The buffer fills up, and push() starts returning false (overflow condition).
+
+Possible consequences: data loss (e.g., UART RX bytes dropped).
+
+### 3. How would you handle wraparound efficiently without modulo?
+Replace modulo with bitwise AND if BUFFER_SIZE is power of 2:
+
+```c
+#define BUFFER_MASK (BUFFER_SIZE - 1)
+next = (cb->head + 1) & BUFFER_MASK;
+```
