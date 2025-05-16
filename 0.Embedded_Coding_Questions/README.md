@@ -90,3 +90,5 @@ Replace modulo with bitwise AND if BUFFER_SIZE is power of 2:
 #define BUFFER_MASK (BUFFER_SIZE - 1)
 next = (cb->head + 1) & BUFFER_MASK;
 ```
+## Question 2:
+You're developing firmware for an ARM Cortex-M microcontroller running FreeRTOS. You need to handle high-speed UART input using DMA and store it in a lock-free circular buffer for the application layer to consume safely.
