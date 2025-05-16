@@ -30,3 +30,50 @@ In a resource-constrained embedded system (e.g., a microcontroller with limited 
 
 - How would you modify the design to support multiple producers or consumers?
 
+```c++
+#include <stdint.h>
+#include <stdbool.h>
+
+#define BUFFER_SIZE 128
+
+typedef struct {
+    uint8_t buffer[BUFFER_SIZE];
+    volatile uint16_t head; // Points to where to write next
+    volatile uint16_t tail; // Points to where to read next
+} CircularBuffer;
+
+void cb_init(CircularBuffer *cb) {
+    cb->head = 0;
+    cb->tail = 0;
+}
+
+bool cb_is_full(CircularBuffer *cb) {
+    return ((cb->head + 1) % BUFFER_SIZE) == cb->tail;
+}
+
+bool cb_is_empty(CircularBuffer *cb) {
+    return cb->head == cb->tail;
+}
+
+// Called from ISR
+bool cb_push(CircularBuffer *cb, uint8_t byte) {
+    uint16_t next = (cb->head + 1) % BUFFER_SIZE;
+    if (next == cb->tail) {
+        // Buffer is full
+        return false;
+    }
+    cb->buffer[cb->head] = byte;
+    cb->head = next;
+    return true;
+}
+
+// Called from main loop
+bool cb_pop(CircularBuffer *cb, uint8_t *byte) {
+    if (cb_is_empty(cb)) {
+        return false;
+    }
+    *byte = cb->buffer[cb->tail];
+    cb->tail = (cb->tail + 1) % BUFFER_SIZE;
+    return true;
+}
+```
