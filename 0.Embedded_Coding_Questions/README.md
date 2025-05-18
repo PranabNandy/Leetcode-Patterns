@@ -92,3 +92,81 @@ next = (cb->head + 1) & BUFFER_MASK;
 ```
 ## Question 2:
 You're developing firmware for an ARM Cortex-M microcontroller running FreeRTOS. You need to handle high-speed UART input using DMA and store it in a lock-free circular buffer for the application layer to consume safely.
+
+✅ C++ UART Circular Buffer with DMA Integration
+
+```cpp
+#ifndef CIRCULARBUFFER_HPP
+#define CIRCULARBUFFER_HPP
+
+#include <cstdint>
+#include <atomic>
+
+template<size_t Size>
+class CircularBuffer {
+    static_assert((Size & (Size - 1)) == 0, "Size must be power of 2");
+
+public:
+    CircularBuffer() : head(0), tail(0) {}
+
+    bool push(uint8_t data) {
+        size_t next = (head + 1) & (Size - 1);
+        if (next == tail.load(std::memory_order_acquire)) {
+            return false; // Buffer full
+        }
+        buffer[head] = data;
+        head = next;
+        return true;
+    }
+
+    bool pop(uint8_t& data) {
+        size_t t = tail.load(std::memory_order_relaxed);
+        if (head == t) return false; // Buffer empty
+        data = buffer[t];
+        tail.store((t + 1) & (Size - 1), std::memory_order_release);
+        return true;
+    }
+
+    bool is_empty() const {
+        return head == tail.load();
+    }
+
+    bool is_full() const {
+        return ((head + 1) & (Size - 1)) == tail.load();
+    }
+
+private:
+    uint8_t buffer[Size];
+    size_t head;
+    std::atomic<size_t> tail;
+};
+#endif
+```
+🧩 Integration with UART + DMA + FreeRTOS
+UART RX DMA Half/Full Callback
+In your stm32xx_hal_uart.c or similar:
+
+c
+Copy
+Edit
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+    // Notify task to copy DMA buffer to circular buffer
+    vTaskNotifyGiveFromISR(uartTaskHandle, &xHigherPriorityTaskWoken);
+    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+}
+FreeRTOS Task to Transfer from DMA Buffer to CircularBuffer
+cpp
+Copy
+Edit
+extern CircularBuffer<256> uartRxBuffer;
+extern uint8_t dmaRxBuffer[64]; // DMA buffer
+
+void UARTProcessingTask(void *pvParameters) {
+    for (;;) {
+        ulTaskNotifyTake(pdTRUE, portMAX_DELAY); // Wait for notification
+        for (int i = 0; i < 64; ++i) {
+            uartRxBuffer.push(dmaRxBuffer[i]); // Push into circular buffer
+        }
+    }
+}
