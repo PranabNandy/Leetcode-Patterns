@@ -1,4 +1,16 @@
+# 866 Problems
 
+1. G - **Mar, 2024** - Fail
+2. G - **May, 2024** - Pass
+3. G - **Mar, 2025** - Fail  [ 1 year ] 
+4. G - **Mar, 2026** - Fail
+5. G - **Mar, 2027** - Fail
+6. G - **Mar, 2028** - Pass
+
+```c++
+8 Months = 16 courses
+5 Months = 450 Q
+```
 2. Sorting :
 3. Array :
 4. Binary_search :
