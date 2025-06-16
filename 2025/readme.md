@@ -27,3 +27,21 @@
 15. Graphs: https://github.com/PranabNandy/Leetcode-Patterns/blob/main/2025/15.Graphs.md
 16. DP :
 17: Trie:
+```c++
+int main() {
+    // 18 = (10010)
+    bitset<5> bs1(18);
+    // 5 = (00101)
+    bitset<5> bs2(5);
+    // AND Operator 
+    cout << (bs1 & bs2) << endl;
+    // OR Operator
+    cout << (bs1 | bs2) << endl;
+    // XOR operator
+    cout << (bs1 ^ bs2);
+
+    if(bs1==bs2) cout<<"Pranab";
+    else cout<<"Nandy "<<bs1.count()<<" "<<bs2.count();
+    return 0;
+}
+```
