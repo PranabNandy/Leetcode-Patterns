@@ -25,7 +25,7 @@
 13. Binary_tree:
 14. BST :
 15. Graphs: https://github.com/PranabNandy/Leetcode-Patterns/blob/main/2025/15.Graphs.md
-16. DP :
+16. DP : https://github.com/PranabNandy/Leetcode-Patterns/blob/main/2025/16.DP.md
 17: Trie:
 ```c++
 int main() {
