@@ -26,7 +26,8 @@
 14. BST :
 15. Graphs: https://github.com/PranabNandy/Leetcode-Patterns/blob/main/2025/15.Graphs.md
 16. DP : https://github.com/PranabNandy/Leetcode-Patterns/blob/main/2025/16.DP.md
-17: Trie:
+17. Trie:
+17: 
 ```c++
 int main() {
     // 18 = (10010)
