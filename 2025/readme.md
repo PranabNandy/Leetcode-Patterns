@@ -2,10 +2,11 @@
 
 1. G - **Mar, 2024** - Fail
 2. G - **May, 2024** - Pass
-3. G - **Mar, 2025** - Fail  [ 1 year ] 
-4. G - **Mar, 2026** - Fail
-5. G - **Mar, 2027** - Fail
-6. G - **Mar, 2028** - Pass
+3. G - **Mar, 2025** - Fail  [ 1 year ]
+4. `F - Jun, 2025 - Fail`
+5. G - **Mar, 2026** - Fail
+6. G - **Mar, 2027** - Fail
+7. G - **Mar, 2028** - Pass
 - One Tree Problem ( parent has to send its data to child)
 - One HwTimer Problem
 ```c++
@@ -28,7 +29,7 @@
 15. Graphs: https://github.com/PranabNandy/Leetcode-Patterns/blob/main/2025/15.Graphs.md
 16. DP : https://github.com/PranabNandy/Leetcode-Patterns/blob/main/2025/16.DP.md
 17. Trie:
-17: 
+18. Random Question : https://github.com/PranabNandy/Leetcode-Patterns/blob/main/2025/18.Ramdom.md 
 ```c++
 int main() {
     // 18 = (10010)
