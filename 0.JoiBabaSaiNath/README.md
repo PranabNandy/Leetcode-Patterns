@@ -7,6 +7,10 @@
 3. [Awesome-C](https://github.com/uhub/awesome-c)
 4. [Awesome Embedded Systems](https://github.com/embedded-boston/awesome-embedded-systems)
 
+
+1.https://rmbconsulting.us/publications/a-c-test-the-0x10-best-questions-for-would-be-embedded-programmers/
+
+
 -------------------------------------------------------------------------------
    
 1) Which endianness is: A) x86 families. B) ARM families. C) internet protocols. D) other processors? One of these is kind of a trick question.
