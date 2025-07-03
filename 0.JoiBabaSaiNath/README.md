@@ -41,21 +41,21 @@
 
 14) What is "zero copy" or "zero buffer" concept?
 
-15) How do you determine if a memory address is aligned on a 4 byte boundary in C?
+**15) How do you determine if a memory address is aligned on a 4 byte boundary in C?**
 
-16) What hardware debugging protocols are used to communicate with ARM microcontrollers?
+`16) What hardware debugging protocols are used to communicate with ARM microcontrollers?`
 
 17) What processor architecture was the original Arduino based on?
 
-18) What are the basic concepts of what happens before main() is called in C?
+**18) What are the basic concepts of what happens before main() is called in C?**
 
-19) What are the basic concepts of how printf() works? List and describe some of the special format characters? Show some simple C coding examples.
+**19) What are the basic concepts of how printf() works? List and describe some of the special format characters? Show some simple C coding examples.**
 
 20) Describe each of the following? SRAM, Pseudo-SRAM, DRAM, ROM, PROM, EPROM, EEPROM, MRAM, FRAM, ...
 
-21) Show how to declare a pointer to constant data in C. Show how to declare a function pointer in C.
+**21) Show how to declare a pointer to constant data in C. Show how to declare a function pointer in C.**
 
-22) How do you multiply without using multiply or divide instructions for a multiplier constant of 10, 31, 132?
+`22) How do you multiply without using multiply or divide instructions for a multiplier constant of 10, 31, 132?`
 
 **23) When do you use memmove() instead of memcpy() in C? Describe why.**
 
@@ -109,17 +109,17 @@
 
 47) How do you permanently archive source code? project? what should be archived? what should be documented? have you ever written any procedures of how to archive or build a project? How about describing how to install software tools and configuring them from scratch on a brand new computer that was pulled out of a box?
 
-48) What issues are a concern for algorithms that read/write data to DRAM instead of SRAM?
+**48) What issues are a concern for algorithms that read/write data to DRAM instead of SRAM?**
 
 49) What is the "escape sequence" for "Hayes Command Set"? Where was this used in the past? Where is it used today?
 
 50) What is the "escape character" for "Epson ESC/P"? Where is this used?
 
-51) After powerup, have you ever initialized a character display using C code? From scratch or library calls?
+**51) After powerup, have you ever initialized a character display using C code? From scratch or library calls?**
 
 52) Have you ever written a RAM test from scratch? What are some issues you need to test?
 
-53) Have you ever written code to initialize (configure) low-power self-refreshing DRAM memory after power up (independent of BIOS or other code that did it for the system)? It's likely that most people have never done this.
+**53) Have you ever written code to initialize (configure) low-power self-refreshing DRAM memory after power up (independent of BIOS or other code that did it for the system)? It's likely that most people have never done this.**
 
 **54) Write code in C to "round up" any number to the next "power of 2", unless the number is already a power of 2. For example, 5 rounds up to 8, 42 rounds up to 64, 128 rounds to 128. When is this algorithm useful?**
 
@@ -129,7 +129,7 @@
 
 57) What is NOR-Flash and NAND-Flash memory? Are there any unique software concerns for either?
 
-58) Conceptually, what do you need to do after reconfiguring a digital PLL? What if the digital PLL sources the clock for your microcontroller (and other concerns)?
+**58) Conceptually, what do you need to do after reconfiguring a digital PLL? What if the digital PLL sources the clock for your microcontroller (and other concerns)?**
 
 59) What topics or categories of jokes shouldn't you discuss, tell, forward at work?
 
@@ -173,34 +173,34 @@
 
 79) Have you ever soldered any electronic kits? Have you ever designed your own PCB(s)? Describe. What is a Gerber file?
 
-80) If you create a circular buffer, what size of buffer might optimized code be slightly faster to execute? why?
+**80) If you create a circular buffer, what size of buffer might optimized code be slightly faster to execute? why?**
 
-81) Describe how to multiply two 256-bit numbers using any 32-bit processor without FPU or special instructions. Two or more methods?
+**81) Describe how to multiply two 256-bit numbers using any 32-bit processor without FPU or special instructions. Two or more methods?**
 
 
 ===============================================================================================================================
 
 Some questions for larger embedded systems might also be a good idea:
 
-What is a DSP?
+101. What is a DSP?
 
-What are virtual and physical addresses? What is a MMU?
+102. What are virtual and physical addresses? What is a MMU?
 
-Describe different types of Cache. When do you need to flush the cache, when to invalidate cache?
+103.Describe different types of Cache. When do you need to flush the cache, when to invalidate cache?
 
-What is SIMD?
+104.What is SIMD?
 
-What is a Mailbox register?
+105.What is a Mailbox register?
 
-What is a Cacheline?
+106.What is a Cacheline?
 
-What is a Mutex?
+107.What is a Mutex?
 
-What is Scatter-Gather DMA? What is Ping-Pong DMA?
+108.What is Scatter-Gather DMA? What is Ping-Pong DMA?
 
-What is WCET and where does it matter?
+109.What is WCET and where does it matter?
 
-What is Lockstep execution?
+110.What is Lockstep execution?
 
 ===================================================================================
 
