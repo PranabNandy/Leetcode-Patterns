@@ -57,7 +57,7 @@
 
 22) How do you multiply without using multiply or divide instructions for a multiplier constant of 10, 31, 132?
 
-23) When do you use memmove() instead of memcpy() in C? Describe why.
+**23) When do you use memmove() instead of memcpy() in C? Describe why.**
 
 24) Why is strlen() sometimes not considered "safe" in C? How to make it safer? What is the newer safer function name?
 
