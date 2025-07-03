@@ -1,0 +1,82 @@
+01. What is DMA in the context of the Linux kernel?
+02. How does DMA work in the Linux kernel?
+03. Explain the purpose of DMA in a computer system.
+04. What are the advantages of using DMA over CPU-based data transfers?
+05. Describe the main components involved in DMA transfers in the Linux kernel.
+06. How does the Linux kernel manage DMA transfers?
+07. What is a DMA controller, and how is it used in the Linux kernel?
+08. Discuss the different types of DMA transfers supported in the Linux kernel.
+09. Explain the concept of DMA channels and their significance in the Linux kernel.
+10. How does the Linux kernel handle virtual addressing and physical addressing during DMA transfers?
+11. What are the potential challenges or issues that can arise when using DMA in the Linux kernel?
+12. Describe the steps involved in setting up a DMA transfer in the Linux kernel.
+13. What is the role of DMA mapping functions in the Linux kernel?
+14. How does the Linux kernel ensure data integrity and synchronization during DMA transfers?
+15. Discuss the methods available in the Linux kernel for handling DMA errors or failures.
+16. What is importance of dma_set_mask()?
+17. What is difference between dma_set_mask() and dma_set_coherent_mask()?
+18. What do you understand by coherent in the context of DMA?
+    >A>
+    In the context of the Linux kernel and system programming, the term "coherent" often refers
+    to memory coherence or cache coherence.
+
+    1. Memory Coherence:
+    Memory coherence ensures that any read of a memory location returns the most recent write to
+    that memory location. This is crucial in multi-core or multi-processor systems where multiple
+    CPUs might be accessing or modifying the same memory locations.
+
+    2. Cache Coherence:
+    Cache coherence is a consistency mechanism that ensures all caches in a multi-core system reflect
+    the most recent data in memory. If one core modifies a memory location, other cores with cached
+    copies of that memory must see the updated value.
+
+    In the Linux kernel, when you see terms like "coherent memory," "coherent DMA," or "coherent API,"
+    it generally means:
+    I. Coherent Memory Allocation: The memory allocated is cache-coherent, meaning any changes made by one
+    processor (or DMA device) are immediately visible to other processors without requiring explicit
+    cache management (such as flushing or invalidating caches).
+
+    II. Coherent DMA (Direct Memory Access): In the context of DMA, coherent memory ensures that the device
+    can directly read/write to memory without needing to worry about stale data in CPU caches. This avoids
+    the complexity of managing caches manually.
+
+    For example, in the DMA API, functions like dma_alloc_coherent allocate memory that is guaranteed to be
+    coherent, meaning the CPU and the DMA device can both access it without worrying about cache
+    inconsistencies.
+
+19. What is CMA(Continuous memory allocator)? Was is the need of it ?
+20. What is Dual(/Double)-Address Cycle(DAC) and Single-Address Cycle(SAC) in DMA?
+21. What are different modes or models that DMA controller can support?
+    >A> Single-adress, Dual-Address, 1D, 2D, 3D
+22. What are the types of DMA Mappings are avaialble ?
+    >A>
+    1. Consistence DMA mappings ("synchronous" or "coherent")
+       Consistent DMA mappings which are usually mapped at driver initialization, unmapped at
+       the end and for which the hardware should guarantee that the device and the CPU can
+       access the data in parallel and will see updates made by each other without any explicit
+       software flushing.
+    2. Streaming DMA mappings ("asynchronous" or "outside the coherency domain")
+       Streaming DMA mappings which are usually mapped for one DMA transfer, unmapped right after it
+       (unless you use dma_sync_* below) and for which hardware can optimize for sequential accesses.
+23. What is use of struct dma_pool & dma_pool_* APIs ?
+24. DMA directions
+    >A>
+    1. DMA_NONE			no direction (used for debugging)
+    2. DMA_TO_DEVICE		data is going from the memory to the device
+    3. DMA_FROM_DEVICE		data is coming from the device to the memory
+    4. DMA_BIDIRECTIONAL	direction isn't known
+25. How CMA memory reserved in the Kernel ?
+26. What is difference between DMA descriptor and DMA buffer?
+    >A>
+    - DMA descriptors are data structures that describe a DMA transfer. They contain information
+      such as the source and destination addresses, transfer size, transfer direction, and any
+      additional control flags or parameters.
+    - DMA descriptors are typically used by DMA controllers or DMA engines to manage and execute
+      DMA transfers efficiently. They provide a detailed description of the data transfer to be
+      performed.
+    - DMA buffers, also known as DMA memory buffers or simply DMA buffers, are regions of memory
+      allocated for DMA operations. They serve as the source or destination of data during DMA
+      transfers.
+    - DMA buffers are often managed by the operating system's memory management subsystem and
+      may be allocated, mapped, and deallocated by device drivers or other kernel components.
+
