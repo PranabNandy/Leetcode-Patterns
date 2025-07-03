@@ -1,5 +1,14 @@
 # 0.JoibabaSaiNath
 
+## Similar sources
+
+1. [TheEmbeddedNewTestament](https://github.com/theEmbeddedGeorge/theEmbeddedNewTestament.github.io/tree/master)
+2. [AwesomeEmbedded](https://github.com/nhivp/Awesome-Embedded)
+3. [Awesome-C](https://github.com/uhub/awesome-c)
+4. [Awesome Embedded Systems](https://github.com/embedded-boston/awesome-embedded-systems)
+
+-------------------------------------------------------------------------------
+   
 1) Which endianness is: A) x86 families. B) ARM families. C) internet protocols. D) other processors? One of these is kind of a trick question.
 
 2) Explain how interrupts work. What are some things that you should never do in an interrupt function?
