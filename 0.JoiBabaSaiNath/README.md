@@ -59,9 +59,9 @@
 
 **23) When do you use memmove() instead of memcpy() in C? Describe why.**
 
-24) Why is strlen() sometimes not considered "safe" in C? How to make it safer? What is the newer safer function name?
+`24) Why is strlen() sometimes not considered "safe" in C? How to make it safer? What is the newer safer function name?`
 
-25) When is the best time to malloc() large blocks of memory in embedded processors? Describe alternate approach if malloc() isn't available or desired to not use it, and describe some things you will need to do to ensure it safely works.
+**25) When is the best time to malloc() large blocks of memory in embedded processors? Describe alternate approach if malloc() isn't available or desired to not use it, and describe some things you will need to do to ensure it safely works.**
 
 26) Describe symbols on a schematic? What is a printed circuit board?
 
