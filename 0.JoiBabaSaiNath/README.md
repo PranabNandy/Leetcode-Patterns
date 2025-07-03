@@ -13,19 +13,19 @@
 
 -------------------------------------------------------------------------------
    
-1) Which endianness is: A) x86 families. B) ARM families. C) internet protocols. D) other processors? One of these is kind of a trick question.
+**1) Which endianness is: A) x86 families. B) ARM families. C) internet protocols. D) other processors? One of these is kind of a trick question.**
 
-2) Explain how interrupts work. What are some things that you should never do in an interrupt function?
+**2) Explain how interrupts work. What are some things that you should never do in an interrupt function?**
 
-3) Explain when you should use "volatile" in C.
+**3) Explain when you should use "volatile" in C.**
 
-4) Explain UART, SPI, I2C buses. Describe some of the signals in each. At a high-level describe each. Have you ever used any? Where? How? What type of test equipment would you want to use to debug these types of buses? Have you ever used test equipment to do it? Which?
+**4) Explain UART, SPI, I2C buses. Describe some of the signals in each. At a high-level describe each. Have you ever used any? Where? How? What type of test equipment would you want to use to debug these types of buses? Have you ever used test equipment to do it? Which?**
 
-5) Explain how DMA works. What are some of the issues that you need to worry about when using DMA?
+**5) Explain how DMA works. What are some of the issues that you need to worry about when using DMA?**
 
-6) Where does the interrupt table reside in the memory map for various processor families?
+**6) Where does the interrupt table reside in the memory map for various processor families?**
 
-7) In which direction does the stack grow in various processor families?
+**7) In which direction does the stack grow in various processor families?**
 
 8) Implement a Count Leading Zero (CLZ) bit algorithm, but don't use the assembler instruction. What optimizations to make it faster? What are some uses of CLZ?
 
@@ -37,7 +37,7 @@
 
 12) Explain fixed-point math. How do you convert a number into a fixed-point, and back again? Have you ever written any C functions or algorithms that used fixed-point math? Why did you?
 
-13) What is a pull-up or pull-down resistor? When might you need to use them?
+**13) What is a pull-up or pull-down resistor? When might you need to use them?**
 
 14) What is "zero copy" or "zero buffer" concept?
 
