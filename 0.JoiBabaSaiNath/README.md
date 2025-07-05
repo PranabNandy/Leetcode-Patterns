@@ -8,7 +8,122 @@
 	v2=v1; // v2={1,2,3,40,50}  --> In both cases v2.size()==3
 	v2=move(v1); //v2={1,2,3,0,0};
 ```
- 
+
+```c++
+ class UnorderedMap {
+    struct Node {
+        int key;
+        int value;
+        Node* next;
+        Node(int k, int v, Node* n = nullptr) : key(k), value(v), next(n) {}
+    };
+
+    vector<Node*> buckets;
+    size_t size; // No of total element in the bucket
+    float load_factor_threshold = 1.0;
+	hash<int> hashed_value;
+	
+    size_t hash(int key) {
+		return hashed_value(key) % buckets.size();
+    }
+
+    void rehash() {
+		// Creating a new bucket fo 2x size and reorganizing the data
+        vector<Node*> new_buckets(buckets.size() * 2, nullptr);
+        for (auto& head : buckets) {
+            Node* curr = head;
+            while (curr) {
+				
+                size_t new_index = hashed_value(curr->key) % new_buckets.size();
+				Node *Next=curr->next;
+				// Adding old <Node> entry  in the new_bucket
+				if(new_buckets[new_index]==nullptr){
+					
+					new_buckets[new_index] = curr;
+					curr->next=nullptr;
+				}
+				else{
+					Node *curr_temp=new_buckets[new_index], *prev_temp;
+					while(curr_temp){
+							prev_temp=curr_temp;
+							curr_temp=curr_temp->next;
+					}
+					prev_temp->next=curr;
+					curr->next=nullptr;
+				}
+                curr = Next;
+            }
+        }
+        buckets = move(new_buckets);
+    }
+
+public:
+    UnorderedMap(size_t initial_size = 1){
+        buckets=vector<Node*>(initial_size,nullptr);
+		size=0;
+    } 
+
+    void insert(int key, int value) {
+        size_t index = hash(key);
+        Node* curr = buckets[index], *prev=buckets[index];
+		// Finding where to insert the new element
+        while (curr) {
+            if (curr->key == key) {
+                curr->value = value;
+                return;
+            }
+			prev=curr;
+            curr = curr->next;
+        }
+        (prev)?prev->next:buckets[index] = new Node(key, value, buckets[index]);
+        ++size;
+		// This is one of the importent logic 
+        if ((float)size / buckets.size() > load_factor_threshold) {
+            rehash();
+        }
+    }
+
+    bool find(int key, int& out_value) {
+        size_t index = hash(key);
+        Node* curr = buckets[index];
+        while (curr) {
+            if (curr->key == key) {
+                out_value = curr->value;
+                return true;
+            }
+            curr = curr->next;
+        }
+        return false;
+    }
+
+    void erase(int key) {
+        size_t index = hash(key);
+        Node* curr = buckets[index];
+        Node* prev = nullptr;
+        while (curr) {
+            if (curr->key == key) {
+                if (prev) prev->next = curr->next;
+                else buckets[index] = curr->next;
+                delete curr;
+                --size;
+                return;
+            }
+            prev = curr;
+            curr = curr->next;
+        }
+    }
+
+    ~UnorderedMap() {
+        for (auto& head : buckets) {
+            while (head) {
+                Node* tmp = head;
+                head = head->next;
+                delete tmp;
+            }
+        }
+    }
+};
+```
 ## Similar sources
 
 1. [TheEmbeddedNewTestament](https://github.com/theEmbeddedGeorge/theEmbeddedNewTestament.github.io/tree/master)
