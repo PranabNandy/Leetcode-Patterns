@@ -1,12 +1,19 @@
 # 0.JoibabaSaiNath
+
+## 2 Importent C++ STL
+```c++
+ bitset<5> b("10101");
+ hash<string> hashed_value;
+```
+ 
 ## Hash Table Implmentation
 
 ![Untitled](https://github.com/user-attachments/assets/ea77d09f-8a87-4e3a-a303-71520f4f4b06)
 ```c++
-	vector<int> v1={1,2,3};
-	vector<int> v2={10,20,30,40,50};
-	v2=v1; // v2={1,2,3,40,50}  --> In both cases v2.size()==3
-	v2=move(v1); //v2={1,2,3,0,0};
+vector<int> v1={1,2,3};
+vector<int> v2={10,20,30,40,50};
+v2=v1; // v2={1,2,3,40,50}  --> In both cases v2.size()==3
+v2=move(v1); //v2={1,2,3,0,0};
 ```
 
 ```c++
@@ -28,30 +35,29 @@
     }
 
     void rehash() {
-		// Creating a new bucket fo 2x size and reorganizing the data
+	// Creating a new bucket fo 2x size and reorganizing the data
         vector<Node*> new_buckets(buckets.size() * 2, nullptr);
         for (auto& head : buckets) {
             Node* curr = head;
             while (curr) {
 				
-                size_t new_index = hashed_value(curr->key) % new_buckets.size();
-				Node *Next=curr->next;
-				// Adding old <Node> entry  in the new_bucket
-				if(new_buckets[new_index]==nullptr){
-					
-					new_buckets[new_index] = curr;
-					curr->next=nullptr;
-				}
-				else{
-					Node *curr_temp=new_buckets[new_index], *prev_temp;
-					while(curr_temp){
-							prev_temp=curr_temp;
-							curr_temp=curr_temp->next;
-					}
-					prev_temp->next=curr;
-					curr->next=nullptr;
-				}
-                curr = Next;
+            size_t new_index = hashed_value(curr->key) % new_buckets.size();
+	    Node *Next=curr->next;
+	    // Adding old <Node> entry  in the new_bucket
+            if(new_buckets[new_index]==nullptr){		
+		new_buckets[new_index] = curr;
+		curr->next=nullptr;
+	     }
+	     else{
+		 Node *curr_temp=new_buckets[new_index], *prev_temp;
+		 while(curr_temp){
+			prev_temp=curr_temp;
+			curr_temp=curr_temp->next;
+		 }
+		 prev_temp->next=curr;
+		 curr->next=nullptr;
+             }
+             curr = Next;
             }
         }
         buckets = move(new_buckets);
