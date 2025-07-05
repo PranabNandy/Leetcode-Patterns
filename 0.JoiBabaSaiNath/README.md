@@ -2,7 +2,13 @@
 ## Hash Table Implmentation
 
 ![Untitled](https://github.com/user-attachments/assets/ea77d09f-8a87-4e3a-a303-71520f4f4b06)
-
+```c++
+	vector<int> v1={1,2,3};
+	vector<int> v2={10,20,30,40,50};
+	v2=v1; // v2={1,2,3,40,50}  --> In both cases v2.size()==3
+	v2=move(v1); //v2={1,2,3,0,0};
+```
+ 
 ## Similar sources
 
 1. [TheEmbeddedNewTestament](https://github.com/theEmbeddedGeorge/theEmbeddedNewTestament.github.io/tree/master)
