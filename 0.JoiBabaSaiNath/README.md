@@ -1,4 +1,6 @@
 # 0.JoibabaSaiNath
+## Hash Table Implmentation
+![Untitled](https://github.com/user-attachments/assets/effac5da-93b3-452f-9cb9-de4286c4cfff)
 
 ## Similar sources
 
