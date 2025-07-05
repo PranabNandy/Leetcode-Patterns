@@ -1,6 +1,7 @@
 # 0.JoibabaSaiNath
 ## Hash Table Implmentation
-![Untitled](https://github.com/user-attachments/assets/effac5da-93b3-452f-9cb9-de4286c4cfff)
+
+![Untitled](https://github.com/user-attachments/assets/ea77d09f-8a87-4e3a-a303-71520f4f4b06)
 
 ## Similar sources
 
