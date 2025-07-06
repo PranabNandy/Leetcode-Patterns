@@ -1,9 +1,13 @@
 ## Program and Output
-![Screenshot 2025-07-06 163138](https://github.com/user-attachments/assets/fff5a815-4e4f-4d8e-82ba-c0b533bac507)
+![Screenshot 2025-07-06 163138](https://github.com/user-attachments/assets/b922ac75-bc09-4703-9963-9a7ef848dff0)
 
 ## Now debugging start
-![Screenshot 2025-07-06 163444](https://github.com/user-attachments/assets/689afa07-18d7-41f3-a274-a76869465d62)
-![Screenshot 2025-07-06 164111](https://github.com/user-attachments/assets/e35cf53a-bda8-4b07-90ac-23c8d5698344)
+
+
+
+![Screenshot 2025-07-06 164111](https://github.com/user-attachments/assets/aae61b8a-cd61-4b56-9639-7a2afcf855f4)
+
+
 ![Screenshot 2025-07-06 1643318](https://github.com/user-attachments/assets/4013b223-de14-49f5-ad97-ecb498f26d23)
 
 ![Screenshot 2025-07-06 170558](https://github.com/user-attachments/assets/8708ddf2-56bb-4220-9eaa-ddbd5e8d4fba)
