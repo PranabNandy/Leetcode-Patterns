@@ -16,7 +16,7 @@
 2. Sorting :
 3. Array :
 4. Binary_search :
-5. String :
+5. String : https://github.com/PranabNandy/Leetcode-Patterns/blob/main/2025/5.string.md
 6. Linked_list:
 7. Recursion:
 8. Bit_manupulation:
