@@ -1,5 +1,9 @@
 # 866 Problems
-
+```c++
+If N = 10^4   --> O(N^2)
+   N=  10^5   --> O(N logN)
+   N=  10^6   --> O(N)
+```
 1. G - **Mar, 2024** - Fail
 2. G - **May, 2024** - Pass
 3. G - **Mar, 2025** - Fail  [ 1 year ]
