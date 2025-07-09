@@ -4,6 +4,19 @@ If N = 10^4   --> O(N^2)
    N=  10^5   --> O(N logN)
    N=  10^6   --> O(N)
 ```
+
+ ```c++
+   static bool compare(vector<int> &a, vector<int> &b){
+        if(a[0]<b[0]) return 1;
+        else if(a[0]>b[0]) return 0;
+        else return a[1]<b[1];
+    }
+    int maxEvents(vector<vector<int>>& events) {
+        int n = events.size();
+        sort(events.begin(),events.end(),compare);
+        .......
+   }
+```
 1. G - **Mar, 2024** - Fail
 2. G - **May, 2024** - Pass
 3. G - **Mar, 2025** - Fail  [ 1 year ]
