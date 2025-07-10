@@ -130,6 +130,13 @@ public:
     }
 };
 ```
+
+## Steps to Auto-load a Kernel Module on Boot
+- sudo cp xyz.ko /lib/modules/$(uname -r)/extra/
+- sudo depmod   // This indexes your modules so they can be loaded properly via modprobe
+- Add the module name to /etc/modules-load.d/
+- 
+
 ## Similar sources
 
 1. [TheEmbeddedNewTestament](https://github.com/theEmbeddedGeorge/theEmbeddedNewTestament.github.io/tree/master)
