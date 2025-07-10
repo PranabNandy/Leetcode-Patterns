@@ -137,6 +137,17 @@ public:
 - Add the module name to /etc/modules-load.d/
 - 
 
+## To ensure that a Guest VM cannot execute privileged instructions directly and instead traps them to the hypervisor (VMM) for safe handling
+- Enable hardware extensions that provide trap-and-emulate capabilities:
+- Use Second Level Address Translation:
+	- Intel: EPT (Extended Page Tables)
+	- AMD: NPT (Nested Page Tables)
+- These ensure:
+	- Guest cannot access host physical memory
+	- MMU-related instructions like INVLPG, MOV to CR3 are trapped or virtualized
+ - Ensure that guest I/O access is controlled via:
+	- I/O bitmap in VMCS/VMCB
+	- Trap I/O instructions like IN, OUT
 ## Similar sources
 
 1. [TheEmbeddedNewTestament](https://github.com/theEmbeddedGeorge/theEmbeddedNewTestament.github.io/tree/master)
