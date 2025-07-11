@@ -12,7 +12,7 @@
 
 ### In BFS:
 - We can insert {Node+parent} so that we can move in one direction only (like left to right )
-
+- Even we can use visited array ( vector<int> vis(N) )
 
 ### In DFS : Directed Graph to detect cycle
 ![image](https://github.com/user-attachments/assets/83884c66-af94-4ce9-a528-876a86733878)
