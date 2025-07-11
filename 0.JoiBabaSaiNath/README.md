@@ -148,6 +148,9 @@ public:
  - Ensure that guest I/O access is controlled via:
 	- I/O bitmap in VMCS/VMCB
 	- Trap I/O instructions like IN, OUT
+
+## How to skip loading 2 module out of 10 module
+- you add those 2 modules in blacklist 
 ## Similar sources
 
 1. [TheEmbeddedNewTestament](https://github.com/theEmbeddedGeorge/theEmbeddedNewTestament.github.io/tree/master)
