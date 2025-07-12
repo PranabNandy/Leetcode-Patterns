@@ -38,7 +38,7 @@ If N = 10^4   --> O(N^2)
 7. Recursion:
 8. Bit_manupulation:
 9. stack_queue:
-10. sliding_window_2_pointer:
+10. sliding_window_2_pointer: https://github.com/PranabNandy/Leetcode-Patterns/blob/main/2025/10.Sliding_window_2_pointer.md
 11. Heaps:
 12. Greedy:
 13. Binary_tree:
