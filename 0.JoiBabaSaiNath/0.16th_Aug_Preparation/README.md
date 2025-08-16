@@ -24,4 +24,11 @@ struct temperature_data {
 
 ```
 
+## 🚩 Problem with packed structs
+
+If you directly access a misaligned field (like your float at offset 2 in the packed struct), the Cortex-M3 will raise a HardFault because:
+
+- Cortex-M3 supports unaligned halfword (16-bit) accesses,
+
+- but unaligned word (32-bit) accesses (like float or int) can trap.
 
