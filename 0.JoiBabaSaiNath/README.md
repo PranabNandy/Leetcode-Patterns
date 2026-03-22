@@ -415,3 +415,4 @@ Some questions for larger embedded systems might also be a good idea:
 - **Mutex:** Cannot be used inside an Interrupt Service Routine (ISR). Because an `ISR doesn't have a thread context, it cannot "own" a mutex,` and it certainly cannot sleep/block if the mutex is unavailable.
 - **Binary Semaphore**: Can be released (given) from an ISR. This is a common pattern for "deferred interrupt processing."
 
+ISR does not have TCB(Thread Control Block). So even if we try to make it sleep. we can not the exact infomation to do that. 
