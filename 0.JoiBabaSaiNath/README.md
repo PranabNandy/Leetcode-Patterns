@@ -416,3 +416,4 @@ Some questions for larger embedded systems might also be a good idea:
 - **Binary Semaphore**: Can be released (given) from an ISR. This is a common pattern for "deferred interrupt processing."
 
 ISR does not have TCB(Thread Control Block). So even if we try to make it sleep. we can not the exact infomation to do that. 
+<img width="2290" height="976" alt="Screenshot 2026-03-22 193627 - Copy" src="https://github.com/user-attachments/assets/6c75b9ee-a127-41ff-9f88-3391639600e0" />
