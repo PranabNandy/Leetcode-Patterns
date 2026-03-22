@@ -404,6 +404,14 @@ Some questions for larger embedded systems might also be a good idea:
 
   ======================================================================================
 
-  
+  # 2026
 
+1. what is the difference between the Mutex and Binary Semaphore?
+- **Mutex**: Has a strict concept of ownership. The thread that locks (acquires) the mutex must be the same thread that unlocks (releases) it.
+- **Binary Semaphore**: Has no ownership. Any thread (or even an Interrupt Service Routine) can "post" or "give" a semaphore, even if it wasn't the one that "took" it
+- **Mutex**: Usually implements Priority Inheritance. If a high-priority thread is waiting for a mutex held by a low-priority thread, the OS temporarily boosts the low-priority thread's priority to prevent "Priority Inversion." It is Used for Mutual Exclusion.
+
+- Binary Semaphore: Does not support priority inheritance. Used for Signaling/Synchronization. One entity (like an ISR) signals another entity (a task) that an event has occurred (e.g., "Data has arrived over DMA").
+- **Mutex:** Cannot be used inside an Interrupt Service Routine (ISR). Because an `ISR doesn't have a thread context, it cannot "own" a mutex,` and it certainly cannot sleep/block if the mutex is unavailable.
+- **Binary Semaphore**: Can be released (given) from an ISR. This is a common pattern for "deferred interrupt processing."
 
