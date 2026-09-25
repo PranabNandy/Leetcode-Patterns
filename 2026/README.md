@@ -1,6 +1,6 @@
 
 DSA Pattern Sheet:
-https://docs.google.com/spreadsheets/d/1T3vPcwlWdMRMYSf8IxQCKb3gX7rGzDss-ZU-R4XFM14/edit?gid=0#gid=0
+- https://docs.google.com/spreadsheets/d/1T3vPcwlWdMRMYSf8IxQCKb3gX7rGzDss-ZU-R4XFM14/edit?gid=0#gid=0
 
 # 🧩 30 Coding Interview Patterns
 -  Two Pointers
