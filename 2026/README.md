@@ -31,5 +31,5 @@ DSA Pattern Sheet:
 -  Custom Data Structures
 -  Bitwise Manipulation
 -  Math and Geometry
--  Segment Tree
+-  {Segment Tree  + Prefix Sum } 
 -  Extra Problems
