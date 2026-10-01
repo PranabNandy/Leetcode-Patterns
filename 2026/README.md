@@ -1,3 +1,6 @@
+Striver sheet:
+https://github.com/Codensity30/Strivers-A2Z-DSA-Sheet/tree/main
+https://codolio.com/question-tracker/sheet/strivers-a2z-dsa-sheet
 
 DSA Pattern Sheet:
 - https://docs.google.com/spreadsheets/d/1s_MhVGbDw5VX4al27bm1zJF8tAvH_oWl/edit?gid=1936436329#gid=1936436329
