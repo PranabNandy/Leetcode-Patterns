@@ -30,21 +30,21 @@ DSA Pattern Sheet:
 10. Subsets
 11. Greedy Programming
 12. Backtracking
-13. Dynamic Programming (20)
+13. `Dynamic Programming` (20)
 14. Cyclic Sort
 15. Topological Sort (9)
 16. Sort and Search
-17. Matrices
+17. `Matrices` (18)
 18. Stacks
-19. Graphs
-20. Tree Depth-First Search
-21. Tree Breadth-First Search
-22. Trie (15)
-23. HashMap
+19. `Graphs` (15)
+20. Tree Depth-First Search (18)
+21. Tree Breadth-First Search (12)
+22. `Trie` (15)
+23. HashMap (19)
 24. Tracking Patterns & Frequency
-25. Union Find
+25. Union Find (14)
 26. Custom Data Structures
 27. Bitwise Manipulation
-28. Math and Geometry
-29. Segment Tree + Prefix Sum
-30. Extra Problems
+28. Math and Geometry (19)
+29. Segment Tree + Prefix Sum ( 11 + 27)
+30. Extra Problems (42)
