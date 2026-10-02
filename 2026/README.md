@@ -2,6 +2,13 @@ Striver sheet:
 - https://github.com/Codensity30/Strivers-A2Z-DSA-Sheet/tree/main
 - https://codolio.com/question-tracker/sheet/strivers-a2z-dsa-sheet
 
+
+| Expression | Numeric Value | Description |
+| :--- | :--- | :--- |
+| INT_MIN | -2,147,483,648 | Minimum bound of a 32-bit signed int |
+| -1e9 | -1,000,000,000 | Scientific notation for -1 × 10⁹ |
+
+
 ### Calculate : (nCr)
 <img width="450" height="255" alt="image" src="https://github.com/user-attachments/assets/52b07ee1-6341-47a5-a512-a8a3761ba0be" />
 
