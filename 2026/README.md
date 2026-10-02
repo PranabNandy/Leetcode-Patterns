@@ -27,7 +27,7 @@ DSA Pattern Sheet:
 7. K-way Merge
 8. Top K Elements
 9. Binary Search
-10. Subsets
+10. Subsets (12)
 11. Greedy Programming
 12. Backtracking
 13. `Dynamic Programming` (20)
