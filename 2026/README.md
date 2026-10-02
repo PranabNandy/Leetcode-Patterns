@@ -2,6 +2,10 @@ Striver sheet:
 - https://github.com/Codensity30/Strivers-A2Z-DSA-Sheet/tree/main
 - https://codolio.com/question-tracker/sheet/strivers-a2z-dsa-sheet
 
+### Calculate : (nCr)
+<img width="450" height="255" alt="image" src="https://github.com/user-attachments/assets/52b07ee1-6341-47a5-a512-a8a3761ba0be" />
+
+
 DSA Pattern Sheet:
 - https://docs.google.com/spreadsheets/d/1s_MhVGbDw5VX4al27bm1zJF8tAvH_oWl/edit?gid=1936436329#gid=1936436329
 
