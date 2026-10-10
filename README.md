@@ -24,6 +24,18 @@
 
 
 ```c++
+string operations
+==========================================
+    string help(string a,string b){
+        if(a.contains(b)) return a;
+        if(b.contains(a)) return b;
+
+    string minimumString(string a, string b, string c) {
+        string ans=find(a,b,c);
+        string res=find(a,c,b);
+        if(ans.size()>res.size()) ans=res;
+        else if(ans.size()==res.size()) ans=(ans<res) ? ans:res;  // lexicographically 
+
 set<int, greater<int>> s;  // Descending order set
 ======================================================
 
